@@ -1,23 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css'
+import { bankTwo, bankOne } from './constant/constants';
+import Buttons from './components/Buttons';
+import { useEffect, useState} from 'react';
 
 function App() {
+   
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeypress)
+  }, [])
+  
+  const [audioList, setaudioList] = useState(bankOne)
+  
+  const handleKeypress =(e)=>{
+    switch(e.keyCode){
+      case bankOne[0].keyCode:
+        
+        break
+      case bankOne[1].keyCode:
+        
+        break
+      case bankOne[2].keyCode:
+        
+        break
+      case bankOne[3].keyCode:
+        
+        break
+      case bankOne[4].keyCode:
+        
+        break
+      case bankOne[5].keyCode:
+        
+        break
+      case bankOne[6].keyCode:
+        
+        break
+      case bankOne[7].keyCode:
+        
+        break
+      case bankOne[8].keyCode:
+        
+        break
+      default: 
+        return 
+    }
+  }
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="drum-machine">
+      <div className="display">
+        {audioList.map()}
+      </div>
     </div>
   );
 }
