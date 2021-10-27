@@ -57,9 +57,11 @@ function App() {
   return (
     <div id="drum-machine">
       <div id="display">Currently Playing: {display}</div>
-        {audioList.map((elem)=>{
-          return <Buttons handleClick={handleClick} {...elem} /> 
-        })}
+        <div className="buttons">
+          {audioList.map((elem)=>{
+            return <Buttons handleClick={handleClick} {...elem} />
+          })}
+        </div>
     </div>
   );
 }
