@@ -10,12 +10,13 @@ body {
   width: 100%;
   height: 100vh;
   font-family: "Poppins", sans-serif;
+  background-color: #6caffe;
 }
 
 #drum-machine {
   width: 400px;
   text-align: center;
-  background-color: rebeccapurple;
+  background-color: #131385;
   color: white;
   padding: 2em;
   border-radius: 10px;
@@ -36,7 +37,7 @@ body {
 
 .drum-pad {
   padding: 1em;
-  background-color: lightblue;
+  background-color: #f994cc;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: 0.2s ease-out;

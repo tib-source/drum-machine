@@ -16,10 +16,12 @@ function App() {
   const keys = ["Q","W","E","A","S","D","Z","X", "C"]
   const handleKeypress =(e)=>{
     try{
-      const key = e.code.split('').pop() 
+      const key = e.code.split('').pop()
+      const keyData = getDataFromKey(key) 
       if(keys.includes(key)){
         resetAudio()
         const audio = document.getElementById(key)
+        setDisplay(keyData.id)
         audio.play()
       }
 
@@ -56,6 +58,7 @@ function App() {
   
   return (
     <div id="drum-machine">
+      <h1>Drum Machine</h1>
       <div id="display">Currently Playing: {display}</div>
         <div className="buttons">
           {audioList.map((elem)=>{
