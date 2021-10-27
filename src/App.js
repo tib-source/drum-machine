@@ -7,10 +7,12 @@ function App() {
    
   useEffect(() => {
     window.addEventListener('keydown', handleKeypress)
+    setDisplay('')
   }, [])
   
   const [audioList, setaudioList] = useState(bankOne)
   const [display, setDisplay] = useState('')
+
   const keys = ["Q","W","E","A","S","D","Z","X", "C"]
   const handleKeypress =(e)=>{
     try{
@@ -30,7 +32,11 @@ function App() {
     try{
       const key = e.target.innerText
       const keyData = getDataFromKey(key)
-      setDisplay("Hello")
+      resetAudio()
+      const audio = document.getElementById(keyData.keyTrigger)
+      setDisplay(keyData.id)
+      audio.play()
+
     }catch(e){
       return console.log(e)
     }
@@ -49,8 +55,8 @@ function App() {
     }
   
   return (
-    <div className="drum-machine">
-      <div className="display">Currently Playing: {display}</div>
+    <div id="drum-machine">
+      <div id="display">Currently Playing: {display}</div>
         {audioList.map((elem)=>{
           return <Buttons handleClick={handleClick} {...elem} /> 
         })}
