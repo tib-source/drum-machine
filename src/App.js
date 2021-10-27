@@ -13,31 +13,31 @@ function App() {
   
   const handleKeypress =(e)=>{
     switch(e.keyCode){
-      case bankOne[0].keyCode:
+      case audioList[0].keyCode:
         
         break
-      case bankOne[1].keyCode:
+      case audioList[1].keyCode:
         
         break
-      case bankOne[2].keyCode:
+      case audioList[2].keyCode:
         
         break
-      case bankOne[3].keyCode:
+      case audioList[3].keyCode:
         
         break
-      case bankOne[4].keyCode:
+      case audioList[4].keyCode:
         
         break
-      case bankOne[5].keyCode:
+      case audioList[5].keyCode:
         
         break
-      case bankOne[6].keyCode:
+      case audioList[6].keyCode:
         
         break
-      case bankOne[7].keyCode:
+      case audioList[7].keyCode:
         
         break
-      case bankOne[8].keyCode:
+      case audioList[8].keyCode:
         
         break
       default: 
@@ -49,7 +49,9 @@ function App() {
   return (
     <div className="drum-machine">
       <div className="display">
-        {audioList.map()}
+        {audioList.map((elem)=>{
+          return <Buttons {...elem} /> 
+        })}
       </div>
     </div>
   );
